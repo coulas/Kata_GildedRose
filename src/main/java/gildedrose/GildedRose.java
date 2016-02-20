@@ -1,6 +1,7 @@
 package gildedrose;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -8,7 +9,11 @@ public class GildedRose {
 
 	private static List<Item> items = null;
 
-	/**
+    public GildedRose(Item[] items) {
+        this.items = Arrays.asList(items);
+    }
+
+    /**
 	 * @param args
 	 */
 	public static void main(String[] args) {
