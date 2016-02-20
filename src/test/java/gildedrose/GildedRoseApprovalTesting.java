@@ -5,12 +5,15 @@ import com.github.approval.Reporter;
 import com.github.approval.reporters.MacOSReporters;
 import com.github.approval.reporters.Reporters;
 import com.github.approval.reporters.WindowsReporters;
+import com.github.approval.utils.DefaultFileSystemUtils;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.xml.stream.XMLReporter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 
 public class GildedRoseApprovalTesting {
@@ -24,12 +27,12 @@ public class GildedRoseApprovalTesting {
                 WindowsReporters.tortoiseImage(),
                 WindowsReporters.tortoiseText(),
                 WindowsReporters.winMerge(),
-                Reporters.imageMagick(),
-                Reporters.fileLauncherWithoutInteraction(),
-                Reporters.gvim(),
-                Reporters.fileLauncher(),
-                Reporters.console(),
                 Reporters.gedit(),
+                Reporters.console(),
+                Reporters.imageMagick(),
+                Reporters.fileLauncher(),
+                Reporters.gvim(),
+                Reporters.fileLauncherWithoutInteraction(),
                 MacOSReporters.diffMerge(),
                 MacOSReporters.ksdiff(),
                 MacOSReporters.p4merge(),
@@ -54,8 +57,7 @@ public class GildedRoseApprovalTesting {
     }
 
     @Test
-    @Ignore
-    public void should_have_no_regression_compared_to_golden_master() {
+    public void should_have_no_regression_compared_to_golden_master() throws IOException {
 
         GildedRose app = new GildedRose(items);
 
@@ -70,8 +72,9 @@ public class GildedRoseApprovalTesting {
             actual.append("\n");
             app.updateQuality();
         }
-
-        Approvals.verify(actual.toString(), Paths.get("target/test-classes/gildedrose/golden-master.txt"));
+        //com.github.approval.utils.FileSystemUtils fsu = new DefaultFileSystemUtils();
+        //fsu.write(Paths.get("src/test/approvalTesting/gildedrose/golden-master.automated.txt"), actual.toString().getBytes(StandardCharsets.UTF_8));
+        Approvals.verify(actual.toString(), Paths.get("src/test/approvalTesting/gildedrose/golden-master.txt"));
 
     }
 }
