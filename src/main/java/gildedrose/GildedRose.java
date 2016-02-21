@@ -50,42 +50,41 @@ public class GildedRose {
                     if (item.getQuality() < QUALITY_ROOF) {
                         item.setQuality(item.getQuality() + 1);
                     }
-                    item.setSellIn(item.getSellIn() - 1);
-                    if (item.getSellIn() < 0) {
+                    if (item.getSellIn() <= 0) {
                         incrementQuality(item);
                     }
+                    item.setSellIn(item.getSellIn() - 1);
                     break;
                 case BACKSTAGE:
-                    if (item.getQuality() < QUALITY_ROOF) {
-                        item.setQuality(item.getQuality() + 1);
-
+                    if (item.getSellIn() <= 0) {
+                        item.setQuality(QUALITY_FLOOR);
+                    } else {
+                        incrementQuality(item);
                         if (item.getSellIn() <= SELLIN_LOW) {
                             incrementQuality(item);
                         }
-
                         if (item.getSellIn() <= SELLIN_VERY_LOW) {
                             incrementQuality(item);
                         }
                     }
                     item.setSellIn(item.getSellIn() - 1);
-                    if (item.getSellIn() < 0) {
-                        item.setQuality(QUALITY_FLOOR);
-                    }
                     break;
                 case SULFURAS:
                     break;
                 default:
-                    if (item.getQuality() > QUALITY_FLOOR) {
-                        item.setQuality(item.getQuality() - 1);
+                    decrementQuality(item);
+                    if (item.getSellIn() <= 0) {
+                        decrementQuality(item);
                     }
                     item.setSellIn(item.getSellIn() - 1);
-                    if (item.getSellIn() < 0) {
-                        if (item.getQuality() > QUALITY_FLOOR) {
-                            item.setQuality(item.getQuality() - 1);
-                        }
-                    }
                     break;
             }
+        }
+    }
+
+    private void decrementQuality(Item item) {
+        if (item.getQuality() > QUALITY_FLOOR) {
+            item.setQuality(item.getQuality() - 1);
         }
     }
 
