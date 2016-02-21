@@ -21,7 +21,7 @@ Item{name='Sulfuras, Hand of Ragnaros', sellIn=-1, quality=80}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=14, quality=21}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=9, quality=50}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=4, quality=50}
-Item{name='Conjured Mana Cake', sellIn=2, quality=5}
+Item{name='Conjured Mana Cake', sellIn=2, quality=4}
 Item{name='default item', sellIn=39, quality=44}
 
 -------- day 2 --------
@@ -34,7 +34,7 @@ Item{name='Sulfuras, Hand of Ragnaros', sellIn=-1, quality=80}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=13, quality=22}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=8, quality=50}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=3, quality=50}
-Item{name='Conjured Mana Cake', sellIn=1, quality=4}
+Item{name='Conjured Mana Cake', sellIn=1, quality=2}
 Item{name='default item', sellIn=38, quality=43}
 
 -------- day 3 --------
@@ -47,7 +47,7 @@ Item{name='Sulfuras, Hand of Ragnaros', sellIn=-1, quality=80}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=12, quality=23}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=7, quality=50}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=2, quality=50}
-Item{name='Conjured Mana Cake', sellIn=0, quality=3}
+Item{name='Conjured Mana Cake', sellIn=0, quality=0}
 Item{name='default item', sellIn=37, quality=42}
 
 -------- day 4 --------
@@ -60,7 +60,7 @@ Item{name='Sulfuras, Hand of Ragnaros', sellIn=-1, quality=80}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=11, quality=24}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=6, quality=50}
 Item{name='Backstage passes to a TAFKAL80ETC concert', sellIn=1, quality=50}
-Item{name='Conjured Mana Cake', sellIn=-1, quality=1}
+Item{name='Conjured Mana Cake', sellIn=-1, quality=0}
 Item{name='default item', sellIn=36, quality=41}
 
 -------- day 5 --------

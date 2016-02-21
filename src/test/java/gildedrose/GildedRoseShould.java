@@ -30,6 +30,27 @@ public class GildedRoseShould {
     }
 
     @Test
+    public void decrease_quality_twice_as_fast_for_conjured() {
+        Item[] givenDefaultItems = new Item[]{new Item("Conjured Mana Cake", 30, 20)};
+        Item[] expectedDefaultItems = new Item[]{new Item("Conjured Mana Cake", 29, 18)};
+        GildedRose gildedRose = new GildedRose(givenDefaultItems);
+        gildedRose.updateQuality();
+        assertThat(gildedRose.getItems())
+                .usingFieldByFieldElementComparator()
+                .containsExactly(expectedDefaultItems);
+    }
+
+    @Test
+    public void decrease_quality_twice_as_fast_of_conjured_when_sellin_is_negative() {
+        Item[] givenDefaultItems = new Item[]{new Item("Conjured Mana Cake", -1, 20)};
+        Item[] expectedDefaultItems = new Item[]{new Item("Conjured Mana Cake", -2, 16)};
+        GildedRose gildedRose = new GildedRose(givenDefaultItems);
+        gildedRose.updateQuality();
+        assertThat(gildedRose.getItems())
+                .usingFieldByFieldElementComparator()
+                .containsExactly(expectedDefaultItems);
+    }
+    @Test
     public void not_modify_sulfuras() {
         Item[] givenDefaultItems = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 30, 20)};
         Item[] expectedDefaultItems = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 30, 20)};
